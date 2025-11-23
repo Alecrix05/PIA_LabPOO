@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CRUD Agenda - Menu Principal</title>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .menu { background: #f4f4f4; padding: 20px; border-radius: 8px; }
+        .form-section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; }
+        input, button { margin: 5px; padding: 8px; }
+        button { background: #007cba; color: white; border: none; cursor: pointer; }
+        button:hover { background: #005a87; }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <h1>CRUD Agenda de Contactos</h1>
+        
+        <!-- Insertar Contacto -->
+        <div class="form-section">
+            <h2>Insertar Contacto</h2>
+            <form method="post" action="InsertContact">
+                <input type="text" name="nombre" placeholder="Nombre" required><br>
+                <input type="text" name="apellido" placeholder="Apellido" required><br>
+                <input type="email" name="correo" placeholder="Correo" required><br>
+                <input type="tel" name="telefono" placeholder="Teléfono" required><br>
+                <button type="submit">Insertar</button>
+            </form>
+        </div>
+
+        <!-- Actualizar Contacto -->
+        <div class="form-section">
+            <h2>Actualizar Contacto</h2>
+            <form method="post" action="UpdateContact">
+                <input type="number" name="id" placeholder="ID del contacto" required><br>
+                <input type="text" name="nombre" placeholder="Nuevo nombre" required><br>
+                <input type="text" name="apellido" placeholder="Nuevo apellido" required><br>
+                <input type="email" name="correo" placeholder="Nuevo correo" required><br>
+                <input type="tel" name="telefono" placeholder="Nuevo teléfono" required><br>
+                <button type="submit">Actualizar</button>
+            </form>
+        </div>
+
+        <div class="form-section">
+            <h2>Eliminar Contacto</h2>
+            <form method="post" action="DeleteContact">
+                <input type="number" name="id" placeholder="ID del contacto a eliminar" required><br>
+                <button type="submit" onclick="return confirm('¿Estás seguro?')">Eliminar</button>
+            </form>
+        </div>
+
+        <!-- Ver Contactos -->
+        <div class="form-section">
+            <h2>Ver Todos los Contactos</h2>
+            <form method="get" action="SelectContact">
+                <button type="submit">Ver Lista</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
